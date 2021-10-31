@@ -1,0 +1,262 @@
+/* css reset */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* css Variables */
+:root{
+    --navbar-height:40px;
+}
+
+/* navbar */
+
+#navbar{
+    display:flex;
+    align-items: center;
+}
+
+/* navbar logo and image */
+#logo{
+margin:-2px -3px;
+}
+
+#logo img{
+    height:50px;
+    margin:6px 20px;
+    opacity:25;
+}
+
+/* navbar list */
+
+#navbar{
+    position: sticky;
+    top:0px;
+}
+
+#navbar ul{
+    display:flex;
+}
+
+#navbar::before{
+    content:"";
+    background-color:black;
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    z-index:-1;
+    opacity: 0.5;
+
+}
+
+#navbar ul li{
+   
+    list-style: none;
+    font-size:  1.1rem;
+}
+
+#navbar ul li a{
+    color:white;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+padding: 8px 7px;
+    margin: 10px 6px;
+    font-family: 'Bree Serif', serif;
+    /* font-family: 'IBM Plex Sans', sans-serif; */
+}
+
+#navbar ul li a:hover{
+    color:black;
+    background-color:white;
+    border-radius: 20px;
+   
+}
+
+/* home section */
+
+#home{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding:0px 20px;
+    height: 525px;
+}
+
+#home::before{
+    content:"";
+    background:url(../bg4.jpg) no-repeat center center/cover;
+    /* image is outside of css folder that's we first take .. to be outside of css folder */
+    position:absolute;
+    height:580px;
+    width:100%;
+    top:0px;
+    left:0px;
+    z-index:-1;
+    opacity: 0.90;
+}
+
+#home h1{
+    color:white;
+    margin:25px;
+    text-align:center;
+    font-family: 'Bree Serif', serif;
+    
+}
+
+#home p{
+    color:white;
+    margin:0px;
+    font-size:1.5rem;
+    text-align:center;
+    font-family: 'Bree Serif', serif;
+}
+
+/* services section */
+
+#services{
+    margin:0px;
+    display:flex;
+}
+#services .box{
+    border:2px solid brown;
+    padding:30px;
+    background-color: #2c20370f;
+    margin:3px 36px;
+    border-radius:23px;
+    height:255px;
+}
+
+#services.box img{
+    display: block;
+    margin:auto;
+    height:100px;
+}
+
+#services.box p{
+    margin:0px;
+}
+
+/* clients section */
+
+#client-section{
+    position:relative;
+   /* height:340px; */
+   margin:29px;
+}
+
+#client-section::before{
+    content:"";
+    position:absolute;
+    background:url('../bg2.jpg');
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.4;
+
+}
+
+#clients{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+.client-item{
+    padding:20px;
+}
+
+
+
+   #clients img{
+   height:130px;
+   }
+
+/* contact section */
+#contact{
+    position:relative;
+}
+
+#contact::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity: 0.4;
+    background:url('../contact-us.jpg') no-repeat center center/cover ;
+}
+
+#contact-box{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding-bottom:34px;
+}
+
+#contact-box input,
+textarea{
+    width:100%;
+    padding:0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+#contact-box form{
+    width:40%;
+}
+
+#contact-box label{
+    font-size:1.3rem;
+    font-family: 'Bree Serif', serif;
+}
+
+
+
+footer{
+    background:black;
+    color:white;
+    padding:5px 20px;
+}
+
+
+/* utility classes */
+.h-primary{
+    font-size:2.8rem;
+    padding:20px;
+    font-family: 'Bree Serif', serif;
+    }
+
+.h-secondary{
+        font-size:1.5rem;
+        padding:15px;
+        font-family: 'Bree Serif', serif;
+        }
+
+.center{
+            text-align:center;
+            margin:0px;
+            padding: 0px 2px;
+            font-family: 'Bree Serif', serif;
+        }
+    
+
+.btn{
+    padding:6px 20px;
+    border:2px solid white;
+    background-color: brown;
+    color:  white;
+    font-weight:bold;
+    margin:5px;
+    font-size: 0.8 rem;
+    border-radius: 12px;
+    cursor:pointer;
+   }
