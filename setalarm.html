@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/setalarm.css">
+    <link rel="stylesheet" media="screen and (max-width:1300px)" href="css/phone2.css">
+   
+    
+    <title>Meditation</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Set my Meditation</div>
+        <div  class="w-50 m-auto">
+            <form action="php/alarmdata.php" method="post" enctype="multipart/form-data">
+                <div class="user-details">
+
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter Your fullname" required="" name="fullname"
+                            autocomplete="off" class="form-control" />
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Meditation Name</span>
+                        <input type="text" placeholder="Enter Your Meditation Name" required="" name="mediname"
+                            autocomplete="off" class="form-control" />
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Add description</span>
+                        <input type="varchar" placeholder="Ex. 1 tablet with water" name="description"
+                            autocomplete="off" class="form-control" />
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Medicine type</span>
+                        <select class="s" name="meditype">
+
+                            <option value="">Select Medicine type</option>
+                            <option value="A+">Tablet</option>
+                            <option value="B+">Capsule</option>
+                            <option value="AB+">Liquid</option>
+                            <option value="O+">Drops</option>
+                            <option value="A-">Injection</option>
+                            <option value="B-">Inhalers</option>
+                            <option value="AB-">Topical medicines</option>
+                            <option value="O-">Other</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Set alarm</span>
+                        <input type="datetime-local" required="" id="alarm" name="datime" autocomplete="off"
+                            class="form-control" />
+                    </div>
+                    <!-- <small class="font text text-muted">Alarm will ring on set time </small> -->
+
+
+                    <!-- <button id="alarmSubmit" type="submit">Set alarm</button> -->
+                    <div class="button">
+                        <input type="submit" class="button" name="insert" id="alarmSubmit" value="Set alarm">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function showNotification() {
+            const notification = new Notification("New messsage from SetmyAlarm.com", {
+                body: "hello , it's time to take your medicine."
+                // icon: "logo1.png (path was given here)"
+            });
+            notification.onclick=(e)=>{
+                window.location.href="https://google.com";
+            };
+        }
+        // default,granted,denied
+        console.log(Notification.permission);
+        if (Notification.permission === "granted") {
+            function showNotification();
+            // alert("you have permission");
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted")
+                    showNotification();
+            });
+        }
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<script src="js/set_alarm.js"></script>
+
+</html>
